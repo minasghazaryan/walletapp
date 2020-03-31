@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletApp", "WalletApp.csproj", "{0EF06A51-BC44-4593-BA10-76FF9AA3010D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EF06A51-BC44-4593-BA10-76FF9AA3010D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF06A51-BC44-4593-BA10-76FF9AA3010D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF06A51-BC44-4593-BA10-76FF9AA3010D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF06A51-BC44-4593-BA10-76FF9AA3010D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BEAFCCF-073C-41BB-8C04-789A54EB5271}
+	EndGlobalSection
+EndGlobal

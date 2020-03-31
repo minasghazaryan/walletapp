@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "_Create";
+    Layout = null;
+    var resiveUser = ViewBag.resiveUser as ApplicationUserViewModel;
+    var currentUser = ViewBag.currUser as ApplicationUserViewModel;
+}
+@model TransactionViewModel
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+
+        <form asp-controller="Home" asp-action="CreateTransaction" method="post" id="editForm" class="form-horizontal" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="text-center">
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Description"></label>
+                        <input asp-for="Description" />
+                        <label class="control-label" asp-for="Price"></label>
+                        <input asp-for="Price" />
+                        <label class="control-label" >Whom</label>
+                        <label class="control-label" >@resiveUser.FirstName</label>
+                        
+                        <input type="hidden" asp-for="SendToUserId"  value="@resiveUser.Id" />
+                        <input type="hidden" asp-for="CreateByUserId" value="@currentUser.Id" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </form>
+    </div>
+

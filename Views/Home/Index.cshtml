@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var user = ViewBag.user as ApplicationUserViewModel;
+}
+@model List<TransactionViewModel>
+
+    <div style="width:100%">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        Total Amount
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @user.FirstName
+                    </td>
+                    <td>
+                        @user.LastName
+                    </td>
+                    <td>
+                        @user.Email
+                    </td>
+                    <td>
+                        @user.PhoneNumber
+                    </td>
+
+                    <td>
+                        @user.Age
+                    </td>
+                    <td>
+                        @user.TotalAmount
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <p>
+            <a class="btn btn-primary btn-sm" id="btnCreate" asp-action="CreateTransaction">Create New Transaction</a>
+        </p>
+
+        <h2 class="text-center">Transactions</h2>
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>
+                        Number
+                    </th>
+                    <th>
+                        Amount
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Sended user
+                    </th>
+                    <th>
+                        Resived User
+                    </th>
+                    <th>
+                        Send Date
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="TransactionIndex" asp-route-Id="@item.Id" id="btnShow">@item.Id</a>
+                        </td>
+                        <td>
+                            @item.Price
+                        </td>
+                        <td>
+                            @item.Description
+                        </td>
+                        <td>
+                            @item.CreateByUser.FirstName
+                        </td>
+                        <td>
+                            @item.SendToUser.FirstName
+                        </td>
+
+                        <td>
+                            @item.SentDate
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div id="dialogDiv" class="modal fade" aria-hidden="true">
+            <div id="dialogContent" class="modal-dialog">
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "_TransactionIndex";
+}
+@model TransactionViewModel
+<div class="modal-content" style="width:600px">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    </div>
+    <div class="modal-body">
+        <table class="table-bordered">
+            <thead>
+                <tr>
+                    <th class="col-lg-2">
+                        ID
+                    </th>
+                    <th class="col-lg-2">
+                        Description
+                    </th>
+
+                    <th class="col-lg-2">
+                        Price
+                    </th>
+
+                    <th class="col-lg-1">
+                        Sended user
+                    </th>
+                    <th class="col-lg-1">
+                        Resived User
+                    </th>
+                    <th class="col-lg-4">
+                        Send Date
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-lg-2">
+                        @Model.Id
+                    </td>
+                    <td class="col-lg-2">
+                        @Model.Description
+                    </td>
+                    <td class="col-lg-2">
+                        @Model.Price
+                    </td>
+                    <td class="col-lg-1">
+                        @Model.CreateByUserName
+                    </td>
+                    <td class="col-lg-1">
+                        @Model.SendToUserName
+                    </td>
+
+                    <td class="col-lg-4">
+                        @Model.SentDate
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
